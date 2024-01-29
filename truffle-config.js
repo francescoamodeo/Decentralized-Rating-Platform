@@ -18,14 +18,11 @@
  *
  */
 
-const HDWalletProvider = require('truffle-hdwallet-provider');
-const fs = require('fs');
+require('dotenv').config();
+const mnemonic = process.env["MNEMONIC"];
+const infuraKey = process.env["INFURA_KEY"];
 
-// Store here your Infura credentials
-const credentials = JSON.parse(fs.readFileSync('ropsten.json', 'utf8'));
-
-const mnemonic = credentials["mnemonic"];
-const infura_key = credentials["infuraKey"];
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -89,6 +86,28 @@ module.exports = {
       gas:   7000000,
       gasPrice: 20000000000,
     },
+
+    arbitrum_local: {
+        network_id: "*",
+        gas: 100000000,
+        //gasPrice: 100000000,
+        provider: function() {
+          return new HDWalletProvider([
+            process.env.L1L2LOCAL_PRIVATE_KEY,
+            process.env.L2LOCAL_PRIVATE_KEY,
+           ], 'http://127.0.0.1:8547', 0, 2)
+        },
+        //from: "0x683642c22feDE752415D4793832Ab75EFdF6223c"
+    },
+    geth:{
+        network_id: "*",
+        host: "127.0.0.1",
+        port: 8545,
+        //gas: 100000000,
+        provider: function() { 
+          return new HDWalletProvider(process.env.L1L2LOCAL_PRIVATE_KEY, 'http://127.0.0.1:8545', 0, 1)
+        },
+      },  
 
     // Another network with more advanced options...
     // advanced: {
