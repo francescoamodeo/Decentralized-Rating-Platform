@@ -1,0 +1,2132 @@
+{
+  "contractName": "FunctionRegistry",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_owner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_to",
+          "type": "address"
+        }
+      ],
+      "name": "changeOwner",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "contract RatingFunction",
+          "name": "_function",
+          "type": "address"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "pushFunction",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getFunction",
+      "outputs": [
+        {
+          "internalType": "contract RatingFunction",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getIds",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "",
+          "type": "bytes32[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.13+commit.5b0b510c\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_owner\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"changeOwner\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_index\",\"type\":\"uint256\"}],\"name\":\"getFunction\",\"outputs\":[{\"internalType\":\"contract RatingFunction\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getIds\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"contract RatingFunction\",\"name\":\"_function\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"name\":\"pushFunction\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Andrea Lisi\",\"methods\":{\"changeOwner(address)\":{\"params\":{\"_to\":\"The new owner of this contract \"}},\"getFunction(uint256)\":{\"params\":{\"_index\":\"The index of the Function to retrieve\"},\"return\":\"The RatingFunction address\"},\"getIds()\":{\"return\":\"The list of RatingFunction\"},\"pushFunction(address,bytes32)\":{\"params\":{\"_function\":\"The Function to add\",\"_name\":\"A name for the Function\"}}},\"title\":\"FunctionRegistry\"},\"userdoc\":{\"methods\":{\"changeOwner(address)\":{\"notice\":\"This function provides the possibility to change the owner\"},\"getFunction(uint256)\":{\"notice\":\"Get the RatingFunction at a certain index\"},\"getIds()\":{\"notice\":\"Get the list of the names of the stored RatingFunctionFunctions\"},\"pushFunction(address,bytes32)\":{\"notice\":\"Add a new RatingFunction to the registry, only if the caller is the owner of this registry (avoid spam)\"}},\"notice\":\"This contracts stores a list of RatingFunctions. An Item can pick from this registry the function it wants to use to compute its final score\"}},\"settings\":{\"compilationTarget\":{\"project:/contracts/FunctionRegistry.sol\":\"FunctionRegistry\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/FunctionRegistry.sol\":{\"keccak256\":\"0x52d43dd0d0e74a121c098250c3c9a98e0da1128cbc1a9c17f7fcf2944032b3f0\",\"urls\":[\"bzz-raw://dfa0ae6fb1473eb511710a02078c9f36078e3bf93f16888b18f2c45d5cc8ab97\",\"dweb:/ipfs/QmPE9cPMB8iTxii8tuQFXiubo76tbos11zob6gxbGizWZR\"]},\"project:/contracts/Interfaces.sol\":{\"keccak256\":\"0x36190c48ce64b6c62654f70c22c8788c659ad88a2fbf19cd5cda7b22c44d8c85\",\"urls\":[\"bzz-raw://a4ab860c5b9695a691bc8df3a899b432e9e816f65952f0516717d2a1abbfcf0d\",\"dweb:/ipfs/QmXbauS2aTRSj5PFfYrqhvQVGtBZbrmkjKtg9iBzNk5pZf\"]},\"project:/contracts/RatingFunction.sol\":{\"keccak256\":\"0x38ccb92ff8fda04265a4e69e9a3edff2ce1b616ba131fac45335cb0bee0b4bf8\",\"urls\":[\"bzz-raw://40a1c6290bf2a86da420a280502dd7d724465d52a4b96529d2aefb6025cb81a8\",\"dweb:/ipfs/QmbMgtvxyGfsXTFrKg8AaQcLuh5TJ31vGq7VM5EYChKp5y\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516104ab3803806104ab8339818101604052602081101561003357600080fd5b505160008054600160a060020a03909216600160a060020a0319909216919091179055610446806100656000396000f3fe608060405234801561001057600080fd5b5060043610610073577c010000000000000000000000000000000000000000000000000000000060003504630e097de781146100785780632b105663146100b157806340393cff146101095780638da5cb5b14610137578063a6f9dae11461013f575b600080fd5b6100956004803603602081101561008e57600080fd5b5035610165565b60408051600160a060020a039092168252519081900360200190f35b6100b96101ff565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100f55781810151838201526020016100dd565b505050509050019250505060405180910390f35b6101356004803603604081101561011f57600080fd5b50600160a060020a038135169060200135610257565b005b61009561035a565b6101356004803603602081101561015557600080fd5b5035600160a060020a0316610369565b600060015482106101d757604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f496e76616c69642046756e6374696f6e20696e64657800000000000000000000604482015290519081900360640190fd5b600182815481106101e457fe5b600091825260209091200154600160a060020a031692915050565b6060600280548060200260200160405190810160405280929190818152602001828054801561024d57602002820191906000526020600020905b815481526020019060010190808311610239575b5050505050905090565b600054600160a060020a031633146102d057604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600d60248201527f4e6f7420746865206f776e657200000000000000000000000000000000000000604482015290519081900360640190fd5b6001805480820182557fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0394909416939093179092556002805492830181556000527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace90910155565b600054600160a060020a031681565b600054600160a060020a031633146103e257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600d60248201527f4e6f7420746865206f776e657200000000000000000000000000000000000000604482015290519081900360640190fd5b6000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905556fea265627a7a72315820445b1db695f0e84bf87aab9c4cd19ce15de31311678d05b2feb35d9f2c59334464736f6c634300050d0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b5060043610610073577c010000000000000000000000000000000000000000000000000000000060003504630e097de781146100785780632b105663146100b157806340393cff146101095780638da5cb5b14610137578063a6f9dae11461013f575b600080fd5b6100956004803603602081101561008e57600080fd5b5035610165565b60408051600160a060020a039092168252519081900360200190f35b6100b96101ff565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100f55781810151838201526020016100dd565b505050509050019250505060405180910390f35b6101356004803603604081101561011f57600080fd5b50600160a060020a038135169060200135610257565b005b61009561035a565b6101356004803603602081101561015557600080fd5b5035600160a060020a0316610369565b600060015482106101d757604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601660248201527f496e76616c69642046756e6374696f6e20696e64657800000000000000000000604482015290519081900360640190fd5b600182815481106101e457fe5b600091825260209091200154600160a060020a031692915050565b6060600280548060200260200160405190810160405280929190818152602001828054801561024d57602002820191906000526020600020905b815481526020019060010190808311610239575b5050505050905090565b600054600160a060020a031633146102d057604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600d60248201527f4e6f7420746865206f776e657200000000000000000000000000000000000000604482015290519081900360640190fd5b6001805480820182557fb10e2d527612073b26eecdfd717e6a320cf44b4afac2b0732d9fcbe2b7fa0cf601805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a0394909416939093179092556002805492830181556000527f405787fa12a823e0f2b7631cc41b3ba8828b3321ca811111fa75cd3aa3bb5ace90910155565b600054600160a060020a031681565b600054600160a060020a031633146103e257604080517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600d60248201527f4e6f7420746865206f776e657200000000000000000000000000000000000000604482015290519081900360640190fd5b6000805473ffffffffffffffffffffffffffffffffffffffff1916600160a060020a039290921691909117905556fea265627a7a72315820445b1db695f0e84bf87aab9c4cd19ce15de31311678d05b2feb35d9f2c59334464736f6c634300050d0032",
+  "sourceMap": "359:1169:3:-;;;530:53;8:9:-1;5:2;;;30:1;27;20:12;5:2;530:53:3;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;530:53:3;341:5:4;:14;;-1:-1:-1;;341:14:4;-1:-1:-1;341:14:4;;;;;;;;;-1:-1:-1;;;;359:1169:3;;;;",
+  "deployedSourceMap": "359:1169:3:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;359:1169:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1113:198;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;1113:198:3;;:::i;:::-;;;;-1:-1:-1;;;;;1113:198:3;;;;;;;;;;;;;;1440:86;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;1440:86:3;;;;;;;;;;;;;;;;;799:147;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;799:147:3;;-1:-1:-1;;;;;799:147:3;;;;;;:::i;:::-;;267:20:4;;;:::i;593:80::-;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;593:80:4;-1:-1:-1;;;;;593:80:4;;:::i;1113:198:3:-;1169:14;1228:8;:15;1219:24;;1196:74;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1288:8;1297:6;1288:16;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;1288:16:3;;;-1:-1:-1;;1113:198:3:o;1440:86::-;1480:16;1516:3;1509:10;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1440:86;:::o;799:147::-;420:5:4;;-1:-1:-1;;;;;420:5:4;406:10;:19;398:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;890:8:3;27:10:-1;;23:18;;;45:23;;890:24:3;;;;-1:-1:-1;;890:24:3;-1:-1:-1;;;;;890:24:3;;;;;;;;;;;-1:-1:-1;27:10;;23:18;;;45:23;;-1:-1;924:15:3;;;;;;799:147::o;267:20:4:-;;;-1:-1:-1;;;;;267:20:4;;:::o;593:80::-;420:5;;-1:-1:-1;;;;;420:5:4;406:10;:19;398:45;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;655:5;:11;;-1:-1:-1;;655:11:4;-1:-1:-1;;;;;655:11:4;;;;;;;;;;593:80::o",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\n\n\nimport {Ownable} from \"./Interfaces.sol\";\nimport {RatingFunction, SimpleAvarageFunction} from \"./RatingFunction.sol\";\n\n/// @author Andrea Lisi\n/// @title FunctionRegistry\n/// @notice This contracts stores a list of RatingFunctions. An Item can pick from this registry the function it wants to use to compute its final score\ncontract FunctionRegistry is Ownable {\n\n    RatingFunction[] private registry;  // Se metto public questo mi evito la funzione getFunction\n    bytes32[] private ids;\n\n    constructor(address _owner) Ownable(_owner) public {}\n\n    /// @notice Add a new RatingFunction to the registry, only if the caller is the owner of this registry (avoid spam)\n    /// @param _function The Function to add\n    /// @param _name A name for the Function\n    function pushFunction(RatingFunction _function, bytes32 _name) external isOwner {\n\n        registry.push(_function);\n        ids.push(_name);\n    }\n\n    /// @notice Get the RatingFunction at a certain index\n    /// @param _index The index of the Function to retrieve\n    /// @return The RatingFunction address\n    function getFunction(uint _index) external view returns(RatingFunction) {\n\n        require(_index >= 0 && _index < registry.length, \"Invalid Function index\");\n\n        return registry[_index];\n    }\n\n    /// @notice Get the list of the names of the stored RatingFunctionFunctions\n    /// @return The list of RatingFunction\n    function getIds() external view returns(bytes32[] memory) {\n\n        return ids;\n    }\n}\n",
+  "sourcePath": "/Users/fram3/code/nitrotest/Decentralized-Rating-Platform/contracts/FunctionRegistry.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/FunctionRegistry.sol",
+    "exportedSymbols": {
+      "FunctionRegistry": [
+        580
+      ]
+    },
+    "id": 581,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 502,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "absolutePath": "project:/contracts/Interfaces.sol",
+        "file": "./Interfaces.sol",
+        "id": 504,
+        "nodeType": "ImportDirective",
+        "scope": 581,
+        "sourceUnit": 887,
+        "src": "35:41:3",
+        "symbolAliases": [
+          {
+            "foreign": 503,
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/contracts/RatingFunction.sol",
+        "file": "./RatingFunction.sol",
+        "id": 507,
+        "nodeType": "ImportDirective",
+        "scope": 581,
+        "sourceUnit": 1913,
+        "src": "77:75:3",
+        "symbolAliases": [
+          {
+            "foreign": 505,
+            "local": null
+          },
+          {
+            "foreign": 506,
+            "local": null
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 508,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 619,
+              "src": "388:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$619",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 509,
+            "nodeType": "InheritanceSpecifier",
+            "src": "388:7:3"
+          }
+        ],
+        "contractDependencies": [
+          619
+        ],
+        "contractKind": "contract",
+        "documentation": "@author Andrea Lisi\n @title FunctionRegistry\n @notice This contracts stores a list of RatingFunctions. An Item can pick from this registry the function it wants to use to compute its final score",
+        "fullyImplemented": true,
+        "id": 580,
+        "linearizedBaseContracts": [
+          580,
+          619
+        ],
+        "name": "FunctionRegistry",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 512,
+            "name": "registry",
+            "nodeType": "VariableDeclaration",
+            "scope": 580,
+            "src": "403:33:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_RatingFunction_$1513_$dyn_storage",
+              "typeString": "contract RatingFunction[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 510,
+                "name": "RatingFunction",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 1513,
+                "src": "403:14:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                  "typeString": "contract RatingFunction"
+                }
+              },
+              "id": 511,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "403:16:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_RatingFunction_$1513_$dyn_storage_ptr",
+                "typeString": "contract RatingFunction[]"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "constant": false,
+            "id": 515,
+            "name": "ids",
+            "nodeType": "VariableDeclaration",
+            "scope": 580,
+            "src": "502:21:3",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
+              "typeString": "bytes32[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 513,
+                "name": "bytes32",
+                "nodeType": "ElementaryTypeName",
+                "src": "502:7:3",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bytes32",
+                  "typeString": "bytes32"
+                }
+              },
+              "id": 514,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "502:9:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                "typeString": "bytes32[]"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "body": {
+              "id": 523,
+              "nodeType": "Block",
+              "src": "581:2:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 524,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "argumentTypes": null,
+                    "id": 520,
+                    "name": "_owner",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 517,
+                    "src": "566:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  }
+                ],
+                "id": 521,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 519,
+                  "name": "Ownable",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 619,
+                  "src": "558:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Ownable_$619_$",
+                    "typeString": "type(contract Ownable)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "558:15:3"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 518,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 517,
+                  "name": "_owner",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 524,
+                  "src": "542:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 516,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "542:7:3",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "541:16:3"
+            },
+            "returnParameters": {
+              "id": 522,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "581:0:3"
+            },
+            "scope": 580,
+            "src": "530:53:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 545,
+              "nodeType": "Block",
+              "src": "879:67:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 536,
+                        "name": "_function",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 526,
+                        "src": "904:9:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                          "typeString": "contract RatingFunction"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                          "typeString": "contract RatingFunction"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 533,
+                        "name": "registry",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 512,
+                        "src": "890:8:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_RatingFunction_$1513_$dyn_storage",
+                          "typeString": "contract RatingFunction[] storage ref"
+                        }
+                      },
+                      "id": 535,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "890:13:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_RatingFunction_$1513_$returns$_t_uint256_$",
+                        "typeString": "function (contract RatingFunction) returns (uint256)"
+                      }
+                    },
+                    "id": 537,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "890:24:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 538,
+                  "nodeType": "ExpressionStatement",
+                  "src": "890:24:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 542,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 528,
+                        "src": "933:5:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bytes32",
+                          "typeString": "bytes32"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 539,
+                        "name": "ids",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 515,
+                        "src": "924:3:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
+                          "typeString": "bytes32[] storage ref"
+                        }
+                      },
+                      "id": 541,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "924:8:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$_t_uint256_$",
+                        "typeString": "function (bytes32) returns (uint256)"
+                      }
+                    },
+                    "id": 543,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "924:15:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 544,
+                  "nodeType": "ExpressionStatement",
+                  "src": "924:15:3"
+                }
+              ]
+            },
+            "documentation": "@notice Add a new RatingFunction to the registry, only if the caller is the owner of this registry (avoid spam)\n @param _function The Function to add\n @param _name A name for the Function",
+            "id": 546,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 531,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 530,
+                  "name": "isOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 606,
+                  "src": "871:7:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "871:7:3"
+              }
+            ],
+            "name": "pushFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 529,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 526,
+                  "name": "_function",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 546,
+                  "src": "821:24:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                    "typeString": "contract RatingFunction"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 525,
+                    "name": "RatingFunction",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1513,
+                    "src": "821:14:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                      "typeString": "contract RatingFunction"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 528,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 546,
+                  "src": "847:13:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 527,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "847:7:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "820:41:3"
+            },
+            "returnParameters": {
+              "id": 532,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "879:0:3"
+            },
+            "scope": 580,
+            "src": "799:147:3",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 569,
+              "nodeType": "Block",
+              "src": "1185:126:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "commonType": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        "id": 561,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "leftExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 556,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 554,
+                            "name": "_index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 548,
+                            "src": "1204:6:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": ">=",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "hexValue": "30",
+                            "id": 555,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": true,
+                            "kind": "number",
+                            "lValueRequested": false,
+                            "nodeType": "Literal",
+                            "src": "1214:1:3",
+                            "subdenomination": null,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_rational_0_by_1",
+                              "typeString": "int_const 0"
+                            },
+                            "value": "0"
+                          },
+                          "src": "1204:11:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "nodeType": "BinaryOperation",
+                        "operator": "&&",
+                        "rightExpression": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "id": 560,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftExpression": {
+                            "argumentTypes": null,
+                            "id": 557,
+                            "name": "_index",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 548,
+                            "src": "1219:6:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "BinaryOperation",
+                          "operator": "<",
+                          "rightExpression": {
+                            "argumentTypes": null,
+                            "expression": {
+                              "argumentTypes": null,
+                              "id": 558,
+                              "name": "registry",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 512,
+                              "src": "1228:8:3",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_contract$_RatingFunction_$1513_$dyn_storage",
+                                "typeString": "contract RatingFunction[] storage ref"
+                              }
+                            },
+                            "id": 559,
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "length",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": null,
+                            "src": "1228:15:3",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "1219:24:3",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bool",
+                            "typeString": "bool"
+                          }
+                        },
+                        "src": "1204:39:3",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "496e76616c69642046756e6374696f6e20696e646578",
+                        "id": 562,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1245:24:3",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_d738f83f3ff100aefcd4e770e2fd8c19f5bf342943ec5bb7a22acc2e2bad4f87",
+                          "typeString": "literal_string \"Invalid Function index\""
+                        },
+                        "value": "Invalid Function index"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_d738f83f3ff100aefcd4e770e2fd8c19f5bf342943ec5bb7a22acc2e2bad4f87",
+                          "typeString": "literal_string \"Invalid Function index\""
+                        }
+                      ],
+                      "id": 553,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [
+                        3080,
+                        3081
+                      ],
+                      "referencedDeclaration": 3081,
+                      "src": "1196:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 563,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1196:74:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 564,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1196:74:3"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "baseExpression": {
+                      "argumentTypes": null,
+                      "id": 565,
+                      "name": "registry",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 512,
+                      "src": "1288:8:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_contract$_RatingFunction_$1513_$dyn_storage",
+                        "typeString": "contract RatingFunction[] storage ref"
+                      }
+                    },
+                    "id": 567,
+                    "indexExpression": {
+                      "argumentTypes": null,
+                      "id": 566,
+                      "name": "_index",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 548,
+                      "src": "1297:6:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "IndexAccess",
+                    "src": "1288:16:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                      "typeString": "contract RatingFunction"
+                    }
+                  },
+                  "functionReturnParameters": 552,
+                  "id": 568,
+                  "nodeType": "Return",
+                  "src": "1281:23:3"
+                }
+              ]
+            },
+            "documentation": "@notice Get the RatingFunction at a certain index\n @param _index The index of the Function to retrieve\n @return The RatingFunction address",
+            "id": 570,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFunction",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 549,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 548,
+                  "name": "_index",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "1134:11:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 547,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1134:4:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1133:13:3"
+            },
+            "returnParameters": {
+              "id": 552,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 551,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 570,
+                  "src": "1169:14:3",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                    "typeString": "contract RatingFunction"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 550,
+                    "name": "RatingFunction",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 1513,
+                    "src": "1169:14:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                      "typeString": "contract RatingFunction"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1168:16:3"
+            },
+            "scope": 580,
+            "src": "1113:198:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 578,
+              "nodeType": "Block",
+              "src": "1498:28:3",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 576,
+                    "name": "ids",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 515,
+                    "src": "1516:3:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
+                      "typeString": "bytes32[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 575,
+                  "id": 577,
+                  "nodeType": "Return",
+                  "src": "1509:10:3"
+                }
+              ]
+            },
+            "documentation": "@notice Get the list of the names of the stored RatingFunctionFunctions\n @return The list of RatingFunction",
+            "id": 579,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getIds",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 571,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1455:2:3"
+            },
+            "returnParameters": {
+              "id": 575,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 574,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 579,
+                  "src": "1480:16:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 572,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1480:7:3",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 573,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1480:9:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1479:18:3"
+            },
+            "scope": 580,
+            "src": "1440:86:3",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "external"
+          }
+        ],
+        "scope": 581,
+        "src": "359:1169:3"
+      }
+    ],
+    "src": "0:1529:3"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/FunctionRegistry.sol",
+      "exportedSymbols": {
+        "FunctionRegistry": [
+          580
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            ">=",
+            "0.4",
+            ".21",
+            "<",
+            "0.6",
+            ".0"
+          ]
+        },
+        "id": 502,
+        "name": "PragmaDirective",
+        "src": "0:32:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 887,
+          "absolutePath": "project:/contracts/Interfaces.sol",
+          "file": "./Interfaces.sol",
+          "scope": 581,
+          "symbolAliases": [
+            {
+              "foreign": 503,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 504,
+        "name": "ImportDirective",
+        "src": "35:41:3"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1913,
+          "absolutePath": "project:/contracts/RatingFunction.sol",
+          "file": "./RatingFunction.sol",
+          "scope": 581,
+          "symbolAliases": [
+            {
+              "foreign": 505,
+              "local": null
+            },
+            {
+              "foreign": 506,
+              "local": null
+            }
+          ],
+          "unitAlias": ""
+        },
+        "id": 507,
+        "name": "ImportDirective",
+        "src": "77:75:3"
+      },
+      {
+        "attributes": {
+          "contractDependencies": [
+            619
+          ],
+          "contractKind": "contract",
+          "documentation": "@author Andrea Lisi\n @title FunctionRegistry\n @notice This contracts stores a list of RatingFunctions. An Item can pick from this registry the function it wants to use to compute its final score",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            580,
+            619
+          ],
+          "name": "FunctionRegistry",
+          "scope": 581
+        },
+        "children": [
+          {
+            "attributes": {
+              "arguments": null
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Ownable",
+                  "referencedDeclaration": 619,
+                  "type": "contract Ownable"
+                },
+                "id": 508,
+                "name": "UserDefinedTypeName",
+                "src": "388:7:3"
+              }
+            ],
+            "id": 509,
+            "name": "InheritanceSpecifier",
+            "src": "388:7:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "registry",
+              "scope": 580,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract RatingFunction[]",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "contract RatingFunction[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "contractScope": null,
+                      "name": "RatingFunction",
+                      "referencedDeclaration": 1513,
+                      "type": "contract RatingFunction"
+                    },
+                    "id": 510,
+                    "name": "UserDefinedTypeName",
+                    "src": "403:14:3"
+                  }
+                ],
+                "id": 511,
+                "name": "ArrayTypeName",
+                "src": "403:16:3"
+              }
+            ],
+            "id": 512,
+            "name": "VariableDeclaration",
+            "src": "403:33:3"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "ids",
+              "scope": 580,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "bytes32[]",
+              "value": null,
+              "visibility": "private"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "length": null,
+                  "type": "bytes32[]"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "name": "bytes32",
+                      "type": "bytes32"
+                    },
+                    "id": 513,
+                    "name": "ElementaryTypeName",
+                    "src": "502:7:3"
+                  }
+                ],
+                "id": 514,
+                "name": "ArrayTypeName",
+                "src": "502:9:3"
+              }
+            ],
+            "id": 515,
+            "name": "VariableDeclaration",
+            "src": "502:21:3"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "name": "",
+              "scope": 580,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_owner",
+                      "scope": 524,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 516,
+                        "name": "ElementaryTypeName",
+                        "src": "542:7:3"
+                      }
+                    ],
+                    "id": 517,
+                    "name": "VariableDeclaration",
+                    "src": "542:14:3"
+                  }
+                ],
+                "id": 518,
+                "name": "ParameterList",
+                "src": "541:16:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 522,
+                "name": "ParameterList",
+                "src": "581:0:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 619,
+                      "type": "type(contract Ownable)",
+                      "value": "Ownable"
+                    },
+                    "id": 519,
+                    "name": "Identifier",
+                    "src": "558:7:3"
+                  },
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 517,
+                      "type": "address",
+                      "value": "_owner"
+                    },
+                    "id": 520,
+                    "name": "Identifier",
+                    "src": "566:6:3"
+                  }
+                ],
+                "id": 521,
+                "name": "ModifierInvocation",
+                "src": "558:15:3"
+              },
+              {
+                "attributes": {
+                  "statements": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 523,
+                "name": "Block",
+                "src": "581:2:3"
+              }
+            ],
+            "id": 524,
+            "name": "FunctionDefinition",
+            "src": "530:53:3"
+          },
+          {
+            "attributes": {
+              "documentation": "@notice Add a new RatingFunction to the registry, only if the caller is the owner of this registry (avoid spam)\n @param _function The Function to add\n @param _name A name for the Function",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "name": "pushFunction",
+              "scope": 580,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_function",
+                      "scope": 546,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract RatingFunction",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "RatingFunction",
+                          "referencedDeclaration": 1513,
+                          "type": "contract RatingFunction"
+                        },
+                        "id": 525,
+                        "name": "UserDefinedTypeName",
+                        "src": "821:14:3"
+                      }
+                    ],
+                    "id": 526,
+                    "name": "VariableDeclaration",
+                    "src": "821:24:3"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_name",
+                      "scope": 546,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes32",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes32",
+                          "type": "bytes32"
+                        },
+                        "id": 527,
+                        "name": "ElementaryTypeName",
+                        "src": "847:7:3"
+                      }
+                    ],
+                    "id": 528,
+                    "name": "VariableDeclaration",
+                    "src": "847:13:3"
+                  }
+                ],
+                "id": 529,
+                "name": "ParameterList",
+                "src": "820:41:3"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 532,
+                "name": "ParameterList",
+                "src": "879:0:3"
+              },
+              {
+                "attributes": {
+                  "arguments": null
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "overloadedDeclarations": [
+                        null
+                      ],
+                      "referencedDeclaration": 606,
+                      "type": "modifier ()",
+                      "value": "isOwner"
+                    },
+                    "id": 530,
+                    "name": "Identifier",
+                    "src": "871:7:3"
+                  }
+                ],
+                "id": 531,
+                "name": "ModifierInvocation",
+                "src": "871:7:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_RatingFunction_$1513",
+                                  "typeString": "contract RatingFunction"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (contract RatingFunction) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 512,
+                                  "type": "contract RatingFunction[] storage ref",
+                                  "value": "registry"
+                                },
+                                "id": 533,
+                                "name": "Identifier",
+                                "src": "890:8:3"
+                              }
+                            ],
+                            "id": 535,
+                            "name": "MemberAccess",
+                            "src": "890:13:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 526,
+                              "type": "contract RatingFunction",
+                              "value": "_function"
+                            },
+                            "id": 536,
+                            "name": "Identifier",
+                            "src": "904:9:3"
+                          }
+                        ],
+                        "id": 537,
+                        "name": "FunctionCall",
+                        "src": "890:24:3"
+                      }
+                    ],
+                    "id": 538,
+                    "name": "ExpressionStatement",
+                    "src": "890:24:3"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bytes32",
+                                  "typeString": "bytes32"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "push",
+                              "referencedDeclaration": null,
+                              "type": "function (bytes32) returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 515,
+                                  "type": "bytes32[] storage ref",
+                                  "value": "ids"
+                                },
+                                "id": 539,
+                                "name": "Identifier",
+                                "src": "924:3:3"
+                              }
+                            ],
+                            "id": 541,
+                            "name": "MemberAccess",
+                            "src": "924:8:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 528,
+                              "type": "bytes32",
+                              "value": "_name"
+                            },
+                            "id": 542,
+                            "name": "Identifier",
+                            "src": "933:5:3"
+                          }
+                        ],
+                        "id": 543,
+                        "name": "FunctionCall",
+                        "src": "924:15:3"
+                      }
+                    ],
+                    "id": 544,
+                    "name": "ExpressionStatement",
+                    "src": "924:15:3"
+                  }
+                ],
+                "id": 545,
+                "name": "Block",
+                "src": "879:67:3"
+              }
+            ],
+            "id": 546,
+            "name": "FunctionDefinition",
+            "src": "799:147:3"
+          },
+          {
+            "attributes": {
+              "documentation": "@notice Get the RatingFunction at a certain index\n @param _index The index of the Function to retrieve\n @return The RatingFunction address",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getFunction",
+              "scope": 580,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_index",
+                      "scope": 570,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 547,
+                        "name": "ElementaryTypeName",
+                        "src": "1134:4:3"
+                      }
+                    ],
+                    "id": 548,
+                    "name": "VariableDeclaration",
+                    "src": "1134:11:3"
+                  }
+                ],
+                "id": 549,
+                "name": "ParameterList",
+                "src": "1133:13:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 570,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract RatingFunction",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "RatingFunction",
+                          "referencedDeclaration": 1513,
+                          "type": "contract RatingFunction"
+                        },
+                        "id": 550,
+                        "name": "UserDefinedTypeName",
+                        "src": "1169:14:3"
+                      }
+                    ],
+                    "id": 551,
+                    "name": "VariableDeclaration",
+                    "src": "1169:14:3"
+                  }
+                ],
+                "id": 552,
+                "name": "ParameterList",
+                "src": "1168:16:3"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "tuple()",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_bool",
+                                  "typeString": "bool"
+                                },
+                                {
+                                  "typeIdentifier": "t_stringliteral_d738f83f3ff100aefcd4e770e2fd8c19f5bf342943ec5bb7a22acc2e2bad4f87",
+                                  "typeString": "literal_string \"Invalid Function index\""
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                3080,
+                                3081
+                              ],
+                              "referencedDeclaration": 3081,
+                              "type": "function (bool,string memory) pure",
+                              "value": "require"
+                            },
+                            "id": 553,
+                            "name": "Identifier",
+                            "src": "1196:7:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_bool",
+                                "typeString": "bool"
+                              },
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "operator": "&&",
+                              "type": "bool"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": ">=",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 548,
+                                      "type": "uint256",
+                                      "value": "_index"
+                                    },
+                                    "id": 554,
+                                    "name": "Identifier",
+                                    "src": "1204:6:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "hexvalue": "30",
+                                      "isConstant": false,
+                                      "isLValue": false,
+                                      "isPure": true,
+                                      "lValueRequested": false,
+                                      "subdenomination": null,
+                                      "token": "number",
+                                      "type": "int_const 0",
+                                      "value": "0"
+                                    },
+                                    "id": 555,
+                                    "name": "Literal",
+                                    "src": "1214:1:3"
+                                  }
+                                ],
+                                "id": 556,
+                                "name": "BinaryOperation",
+                                "src": "1204:11:3"
+                              },
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "<",
+                                  "type": "bool"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 548,
+                                      "type": "uint256",
+                                      "value": "_index"
+                                    },
+                                    "id": 557,
+                                    "name": "Identifier",
+                                    "src": "1219:6:3"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "isConstant": false,
+                                      "isLValue": true,
+                                      "isPure": false,
+                                      "lValueRequested": false,
+                                      "member_name": "length",
+                                      "referencedDeclaration": null,
+                                      "type": "uint256"
+                                    },
+                                    "children": [
+                                      {
+                                        "attributes": {
+                                          "argumentTypes": null,
+                                          "overloadedDeclarations": [
+                                            null
+                                          ],
+                                          "referencedDeclaration": 512,
+                                          "type": "contract RatingFunction[] storage ref",
+                                          "value": "registry"
+                                        },
+                                        "id": 558,
+                                        "name": "Identifier",
+                                        "src": "1228:8:3"
+                                      }
+                                    ],
+                                    "id": 559,
+                                    "name": "MemberAccess",
+                                    "src": "1228:15:3"
+                                  }
+                                ],
+                                "id": 560,
+                                "name": "BinaryOperation",
+                                "src": "1219:24:3"
+                              }
+                            ],
+                            "id": 561,
+                            "name": "BinaryOperation",
+                            "src": "1204:39:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "hexvalue": "496e76616c69642046756e6374696f6e20696e646578",
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "lValueRequested": false,
+                              "subdenomination": null,
+                              "token": "string",
+                              "type": "literal_string \"Invalid Function index\"",
+                              "value": "Invalid Function index"
+                            },
+                            "id": 562,
+                            "name": "Literal",
+                            "src": "1245:24:3"
+                          }
+                        ],
+                        "id": 563,
+                        "name": "FunctionCall",
+                        "src": "1196:74:3"
+                      }
+                    ],
+                    "id": 564,
+                    "name": "ExpressionStatement",
+                    "src": "1196:74:3"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 552
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "type": "contract RatingFunction"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 512,
+                              "type": "contract RatingFunction[] storage ref",
+                              "value": "registry"
+                            },
+                            "id": 565,
+                            "name": "Identifier",
+                            "src": "1288:8:3"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 548,
+                              "type": "uint256",
+                              "value": "_index"
+                            },
+                            "id": 566,
+                            "name": "Identifier",
+                            "src": "1297:6:3"
+                          }
+                        ],
+                        "id": 567,
+                        "name": "IndexAccess",
+                        "src": "1288:16:3"
+                      }
+                    ],
+                    "id": 568,
+                    "name": "Return",
+                    "src": "1281:23:3"
+                  }
+                ],
+                "id": 569,
+                "name": "Block",
+                "src": "1185:126:3"
+              }
+            ],
+            "id": 570,
+            "name": "FunctionDefinition",
+            "src": "1113:198:3"
+          },
+          {
+            "attributes": {
+              "documentation": "@notice Get the list of the names of the stored RatingFunctionFunctions\n @return The list of RatingFunction",
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "getIds",
+              "scope": 580,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "external"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 571,
+                "name": "ParameterList",
+                "src": "1455:2:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 579,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes32[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "bytes32[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "bytes32",
+                              "type": "bytes32"
+                            },
+                            "id": 572,
+                            "name": "ElementaryTypeName",
+                            "src": "1480:7:3"
+                          }
+                        ],
+                        "id": 573,
+                        "name": "ArrayTypeName",
+                        "src": "1480:9:3"
+                      }
+                    ],
+                    "id": 574,
+                    "name": "VariableDeclaration",
+                    "src": "1480:16:3"
+                  }
+                ],
+                "id": 575,
+                "name": "ParameterList",
+                "src": "1479:18:3"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 575
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 515,
+                          "type": "bytes32[] storage ref",
+                          "value": "ids"
+                        },
+                        "id": 576,
+                        "name": "Identifier",
+                        "src": "1516:3:3"
+                      }
+                    ],
+                    "id": 577,
+                    "name": "Return",
+                    "src": "1509:10:3"
+                  }
+                ],
+                "id": 578,
+                "name": "Block",
+                "src": "1498:28:3"
+              }
+            ],
+            "id": 579,
+            "name": "FunctionDefinition",
+            "src": "1440:86:3"
+          }
+        ],
+        "id": 580,
+        "name": "ContractDefinition",
+        "src": "359:1169:3"
+      }
+    ],
+    "id": 581,
+    "name": "SourceUnit",
+    "src": "0:1529:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.13+commit.5b0b510c.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.16",
+  "updatedAt": "2024-01-29T22:24:44.037Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "author": "Andrea Lisi",
+    "methods": {
+      "changeOwner(address)": {
+        "params": {
+          "_to": "The new owner of this contract "
+        }
+      },
+      "getFunction(uint256)": {
+        "params": {
+          "_index": "The index of the Function to retrieve"
+        },
+        "return": "The RatingFunction address"
+      },
+      "getIds()": {
+        "return": "The list of RatingFunction"
+      },
+      "pushFunction(address,bytes32)": {
+        "params": {
+          "_function": "The Function to add",
+          "_name": "A name for the Function"
+        }
+      }
+    },
+    "title": "FunctionRegistry"
+  },
+  "userdoc": {
+    "methods": {
+      "changeOwner(address)": {
+        "notice": "This function provides the possibility to change the owner"
+      },
+      "getFunction(uint256)": {
+        "notice": "Get the RatingFunction at a certain index"
+      },
+      "getIds()": {
+        "notice": "Get the list of the names of the stored RatingFunctionFunctions"
+      },
+      "pushFunction(address,bytes32)": {
+        "notice": "Add a new RatingFunction to the registry, only if the caller is the owner of this registry (avoid spam)"
+      }
+    },
+    "notice": "This contracts stores a list of RatingFunctions. An Item can pick from this registry the function it wants to use to compute its final score"
+  }
+}

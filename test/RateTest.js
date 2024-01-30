@@ -8,7 +8,7 @@ const FunctionRegistry = artifacts.require("FunctionRegistry");
 
 contract("RatingSystemFramework: correctness test", accounts => {
 
-    const alice = accounts[1]; // System creator
+    const alice = accounts[0]; // System creator
     const bob = accounts[8];   // User of the System
     const carl = accounts[7];  // Rater EOA user
     const dave = accounts[6];  // Error Test user

@@ -7,7 +7,7 @@ const DatabaseSkills = artifacts.require("DatabaseSkills");
 
 contract("RatingSystemFramework: correctness test", accounts => {
 
-    const alice = accounts[1]; // System creator
+    const alice = accounts[0]; // System creator
     const bob = accounts[2];   // User of the System
     const carl = accounts[3];  // Rater EOA user
 
