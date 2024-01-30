@@ -89,8 +89,8 @@ module.exports = {
 
     arbitrum_local: {
         network_id: "*",
-        gas: 100000000,
-        //gasPrice: 100000000,
+        //gas: 100000000,
+        gasPrice: 100000000,
         provider: function() {
           return new HDWalletProvider([
             process.env.L1L2LOCAL_PRIVATE_KEY,
@@ -103,7 +103,7 @@ module.exports = {
         network_id: "*",
         host: "127.0.0.1",
         port: 8545,
-        //gas: 100000000,
+        gasPrice: 17000000000,
         provider: function() { 
           return new HDWalletProvider(process.env.L1L2LOCAL_PRIVATE_KEY, 'http://127.0.0.1:8545', 0, 1)
         },
