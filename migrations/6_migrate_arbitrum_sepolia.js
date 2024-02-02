@@ -5,7 +5,7 @@
  * 
  * This script migrates the contract in the "arbitrum_local" test network
  * 
- * The arbitrum network is used for experiments about gains of scalability. 
+ * The arbitrum sepolia test network is used for experiments about gains of scalability. 
  * The script deploys the minimal set of contracts that a  system owner needs
  * 
  * It's normal that it takes a while due to the mining process
@@ -23,7 +23,7 @@ module.exports = function(deployer, network, accounts) {
 
     deployer.then(async () => {
 
-        if(network=="arbitrum_local") {
+        if(network=="arbitrum_sepolia") {
 
             // Deploy on Arbitrum local dev network
             let system, avgPc, wgtPc;

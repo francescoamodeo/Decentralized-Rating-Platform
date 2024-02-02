@@ -1,0 +1,12 @@
+{
+    "ropsten": {
+
+        "user": "0x683642c22feDE752415D4793832Ab75EFdF6223c",
+        "itemOwner": "0x3f1Eae7D46d88F08fc2F8ed27FCb2AB183EB2d0E",
+        "userReceiver": "0xfcD5E8405ac403EBbC0BD87Fc84CF213f0698b65",
+        "parameters": {
+            "samples": 5,
+            "batches": [1, 50, 100]
+        }
+    }
+}

@@ -20,7 +20,7 @@
 
 require('dotenv').config();
 const mnemonic = process.env["MNEMONIC"];
-const infuraKey = process.env["INFURA_KEY"];
+const infura_key = process.env["INFURA_KEY"];
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -88,26 +88,49 @@ module.exports = {
     },
 
     arbitrum_local: {
-        network_id: "*",
-        //gas: 100000000,
-        gasPrice: 100000000,
-        provider: function() {
-          return new HDWalletProvider([
-            process.env.L1L2LOCAL_PRIVATE_KEY,
-            process.env.L2LOCAL_PRIVATE_KEY,
-           ], 'http://127.0.0.1:8547', 0, 2)
-        },
-        //from: "0x683642c22feDE752415D4793832Ab75EFdF6223c"
+      network_id: 412346,
+      //gas: 100000000,
+      gasPrice: 100000000,
+      provider: function() {
+        return new HDWalletProvider([
+          process.env.PRIVATE_KEY,
+          process.env.L1L2LOCAL_PRIVATE_KEY,
+          process.env.L2LOCAL_PRIVATE_KEY,
+          ], 'http://127.0.0.1:8547', 0, 3)
+      },
     },
     geth:{
-        network_id: "*",
-        host: "127.0.0.1",
-        port: 8545,
-        gasPrice: 17000000000,
-        provider: function() { 
-          return new HDWalletProvider(process.env.L1L2LOCAL_PRIVATE_KEY, 'http://127.0.0.1:8545', 0, 1)
-        },
-      },  
+      network_id: "*",
+      host: "127.0.0.1",
+      port: 8545,
+      gas:   30000000,
+      gasPrice: 15000000000,
+      provider: function() { 
+        return new HDWalletProvider(process.env.L1L2LOCAL_PRIVATE_KEY, 'http://127.0.0.1:8545', 0, 1)
+      },
+    },  
+
+    arbitrum_sepolia: {
+      network_id: 421614,
+      //gas: 32000000000,
+      //gasPrice: 100000000,
+      provider: function() {
+        return new HDWalletProvider(process.env.PRIVATE_KEY, 'https://arbitrum-sepolia.infura.io/v3/'+infura_key, 0, 2)
+      },
+      networkCheckTimeout: 1000000,    
+      timeoutBlocks: 200,
+    },
+    sepolia: {
+      network_id: 11155111,
+      gas:   30000000,
+      gasPrice: 22000000000,
+      provider: function() {
+        return new HDWalletProvider(process.env.PRIVATE_KEY, 'https://sepolia.infura.io/v3/'+infura_key, 0, 2)
+      },
+      networkCheckTimeout: 1000000,    
+      timeoutBlocks: 200,
+    }
+    
 
     // Another network with more advanced options...
     // advanced: {
