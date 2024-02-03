@@ -76,7 +76,6 @@ module.exports = async (callback) => {
 
                 // Create "batch" calls to payItem()
                 for(var k=0; k<batch; k++) {
-                    item.commitPermission(userUserAddress, user2itemOwnerPayment, {from: itemOwnerAddress});
                     try {
                         await item.commitPermission(userUserAddress, user2itemOwnerPayment, {from: itemOwnerAddress});
                         await user.payItem(itemAddress, user2itemOwnerPayment, {from: userAddress, value: user2itemOwnerPayment})
@@ -85,6 +84,7 @@ module.exports = async (callback) => {
                     } catch (error) {
                         console.log("Error while sending transactions");
                     }
+                    //sleep(1000)
                 }
 
                 let txs = [];
@@ -114,7 +114,7 @@ module.exports = async (callback) => {
             }
 
             const json = JSON.stringify(obj, null, 4);
-            fs.writeFileSync("scripts/measurements/transactions/payItem/"+output+"_"+"sample"+s+".json", json,'utf8');
+            fs.writeFileSync("scripts/measurements/geth/transactions/payItem/"+output+"_"+"sample"+s+".json", json,'utf8');
 
             console.log("Finished sample " + s);
         }

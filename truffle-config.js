@@ -89,15 +89,17 @@ module.exports = {
 
     arbitrum_local: {
       network_id: 412346,
-      //gas: 100000000,
+      gas: 32000000,
       gasPrice: 100000000,
       provider: function() {
         return new HDWalletProvider([
           process.env.PRIVATE_KEY,
           process.env.L1L2LOCAL_PRIVATE_KEY,
-          process.env.L2LOCAL_PRIVATE_KEY,
+          process.env.L2LOCAL_PRIVATE_KEY
           ], 'http://127.0.0.1:8547', 0, 3)
       },
+      networkCheckTimeout: 1000000,    
+      timeoutBlocks: 200,
     },
     geth:{
       network_id: "*",
@@ -106,7 +108,11 @@ module.exports = {
       gas:   30000000,
       gasPrice: 15000000000,
       provider: function() { 
-        return new HDWalletProvider(process.env.L1L2LOCAL_PRIVATE_KEY, 'http://127.0.0.1:8545', 0, 1)
+        return new HDWalletProvider([
+          process.env.PRIVATE_KEY,
+          process.env.L1L2LOCAL_PRIVATE_KEY,
+          process.env.L2LOCAL_PRIVATE_KEY,
+          ], 'http://127.0.0.1:8545', 0, 3)
       },
     },  
 
@@ -115,7 +121,11 @@ module.exports = {
       //gas: 32000000000,
       //gasPrice: 100000000,
       provider: function() {
-        return new HDWalletProvider(process.env.PRIVATE_KEY, 'https://arbitrum-sepolia.infura.io/v3/'+infura_key, 0, 2)
+        return new HDWalletProvider([
+          process.env.PRIVATE_KEY,
+          process.env.PRIVATE_KEY_STAKER_4,
+          process.env.PRIVATE_KEY_STAKER_2
+        ], 'https://arbitrum-sepolia.infura.io/v3/'+infura_key, 0, 3)
       },
       networkCheckTimeout: 1000000,    
       timeoutBlocks: 200,
@@ -125,7 +135,11 @@ module.exports = {
       gas:   30000000,
       gasPrice: 22000000000,
       provider: function() {
-        return new HDWalletProvider(process.env.PRIVATE_KEY, 'https://sepolia.infura.io/v3/'+infura_key, 0, 2)
+        return new HDWalletProvider([
+          process.env.PRIVATE_KEY,
+          process.env.PRIVATE_KEY_STAKER_4,
+          process.env.PRIVATE_KEY_STAKER_2]
+          , 'https://sepolia.infura.io/v3/'+infura_key, 0, 3)
       },
       networkCheckTimeout: 1000000,    
       timeoutBlocks: 200,

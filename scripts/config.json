@@ -6,7 +6,7 @@
         "userReceiver": "0xfcD5E8405ac403EBbC0BD87Fc84CF213f0698b65",
         "parameters": {
             "samples": 5,
-            "batches": [1, 50, 100]
+            "batches": [1, 10, 25, 50, 100]
         }
     }
 }
