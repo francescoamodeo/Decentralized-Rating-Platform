@@ -6,12 +6,12 @@ const FunctionRegistry = artifacts.require("FunctionRegistry");
 
 //RatingSystem.numberFormat = "BN";
 
-contract("RatingSystemFramework: correctness test", accounts => {
+contract("RatingSystemFramework RateTest: correctness test", accounts => {
 
     const alice = accounts[0]; // System creator
-    const bob = accounts[8];   // User of the System
-    const carl = accounts[7];  // Rater EOA user
-    const dave = accounts[6];  // Error Test user
+    const bob = accounts[1];   // User of the System
+    const carl = accounts[2];  // Rater EOA user
+    const dave = accounts[3];  // Error Test user
 
     const bobName = "Bob";
     const bobItemName = "Bobs content";
@@ -489,18 +489,31 @@ contract("RatingSystemFramework: correctness test", accounts => {
             ratings.push({score: 8, rater: carl});
             ratings.push({score: 4, rater: carl});
     
-            ratings.forEach(async (rating) => {
+            /*ratings.forEach(async (rating) => {
     
                 expectedScore += rating.score;
                 bobItem.grantPermission(carlUserAddress, {from: bob});
-                carlObject.addRate(bobItemAddress, rating.score, {from: rating.rater});
-            });
+                const tx = await carlObject.addRate(bobItemAddress, rating.score, {from: rating.rater});
+                const ratingss = await bobItem.ratingCount();
+                console.log("RATINGSSS:"+ratingss);
+                //console.log(tx);
+            });*/
     
+            for (i = 0; i < ratings.length; i++) {
+                expectedScore += ratings[i].score;
+                await bobItem.grantPermission(carlUserAddress, {from: bob})
+                await carlObject.addRate(bobItemAddress, ratings[i].score, {from: ratings[i].rater});
+            }
+            
+            //console.log("RATINGSSS:"+ratingss);
             // Check the number of registered ratings is ok
             assert.equal(await bobItem.ratingCount(), ratings.length+1, bobItemName + " should have " + (ratings.length+1) + " ratings");
     
             // Compute the final score
-            expectedScore = Math.floor(expectedScore/(ratings.length+1)); // Solidity truncates uint
+            expectedScore = Math.floor(expectedScore/(ratings.length+1));// Solidity truncates uint
+
+            const avg = await bobItem.computeScore(bobFunction);
+            console.log("MEDIA "+avg); console.log("EXPECTED :"+expectedScore);
             // Check final score
             assert.equal(await bobItem.computeScore(bobFunction), expectedScore, bobItemName + " should have an average score of " + expectedScore);
         });

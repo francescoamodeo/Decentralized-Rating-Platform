@@ -11,11 +11,11 @@ const ERC20 = artifacts.require("-/Token/ERC20");
 
 //RatingSystem.numberFormat = "BN";
 
-contract("Item", accounts => {
+contract("Item test_commitment", accounts => {
 
     const alice = accounts[0]; // System creator
-    const bob = accounts[8];   // User of the System
-    const carl = accounts[7];  // Rater EOA user
+    const bob = accounts[1];   // User of the System
+    const carl = accounts[2];  // Rater EOA user
     const dave = accounts[6];  // Error Test user
 
     const bobName = "Bob";

@@ -20,7 +20,7 @@
 
 require('dotenv').config();
 const mnemonic = process.env["MNEMONIC"];
-const infura_key = process.env["INFURA_KEY"];
+const infura_key = process.env["INFURA_KEY3"];
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
@@ -95,7 +95,7 @@ module.exports = {
         return new HDWalletProvider([
           process.env.PRIVATE_KEY,
           process.env.L1L2LOCAL_PRIVATE_KEY,
-          process.env.L2LOCAL_PRIVATE_KEY
+          process.env.L2LOCAL_PRIVATE_KEY,
           ], 'http://127.0.0.1:8547', 0, 3)
       },
       networkCheckTimeout: 1000000,    
@@ -105,8 +105,8 @@ module.exports = {
       network_id: "*",
       host: "127.0.0.1",
       port: 8545,
-      gas:   30000000,
-      gasPrice: 15000000000,
+      //gas:   30000000,
+      gasPrice: 20000000000,
       provider: function() { 
         return new HDWalletProvider([
           process.env.PRIVATE_KEY,
@@ -116,30 +116,28 @@ module.exports = {
       },
     },  
 
-    arbitrum_sepolia: {
-      network_id: 421614,
-      //gas: 32000000000,
-      //gasPrice: 100000000,
-      provider: function() {
-        return new HDWalletProvider([
-          process.env.PRIVATE_KEY,
+    /*
+    process.env.PRIVATE_KEY,
+          "5183a3b1349183e8c6f9658872594e4b62070c96f195a6b69eacecea41d49a8a",
+          "e51166d32de9d02f1ef12766b79bb412c3214d1eae7ca2eab38587a73afdf2a3",
+          "39a8a13c8a2bf52dd3a350ea95b5ada528dcbdd89f4347c164b8b2cbe9ecc906",
+          "1a3f0779f8fd88d87a330108658ac99864edb5c20b1ccfe75e88b6aceb232d1e",
+          "d5f9311e401ecb887f899ba9e5603fc2c7d15cbccfa1a486c1ceab0b4a2fed11",
           process.env.PRIVATE_KEY_STAKER_4,
           process.env.PRIVATE_KEY_STAKER_2
-        ], 'https://arbitrum-sepolia.infura.io/v3/'+infura_key, 0, 3)
+    */
+    arbitrum_sepolia: {
+      network_id: 421614,
+      provider: function() {
+        return new HDWalletProvider(mnemonic, 'https://arbitrum-sepolia.infura.io/v3/'+infura_key)
       },
       networkCheckTimeout: 1000000,    
       timeoutBlocks: 200,
     },
     sepolia: {
       network_id: 11155111,
-      gas:   30000000,
-      gasPrice: 22000000000,
       provider: function() {
-        return new HDWalletProvider([
-          process.env.PRIVATE_KEY,
-          process.env.PRIVATE_KEY_STAKER_4,
-          process.env.PRIVATE_KEY_STAKER_2]
-          , 'https://sepolia.infura.io/v3/'+infura_key, 0, 3)
+        return new HDWalletProvider(mnemonic,'https://sepolia.infura.io/v3/'+infura_key)
       },
       networkCheckTimeout: 1000000,    
       timeoutBlocks: 200,

@@ -5,11 +5,11 @@ const Item = artifacts.require("Item");
 const FunctionRegistry = artifacts.require("FunctionRegistry");
 const DatabaseSkills = artifacts.require("DatabaseSkills");
 
-contract("RatingSystemFramework: correctness test", accounts => {
+contract("RatingSystemFramework PaymentTest: correctness test", accounts => {
 
     const alice = accounts[0]; // System creator
-    const bob = accounts[2];   // User of the System
-    const carl = accounts[3];  // Rater EOA user
+    const bob = accounts[1];   // User of the System
+    const carl = accounts[2];  // Rater EOA user
 
     const bobName = "Bob";
     const bobItemName = "Bobs content";
@@ -113,6 +113,8 @@ contract("RatingSystemFramework: correctness test", accounts => {
             // itemObject.SuccessfulPayment().on('data', event => console.log(event));
 
     
+            await itemObject.commitPermission(carlUserAddress, carl2bobPayment, {from: bob});
+
             // Carl send an amout of ether to Bob's item    
             const payTx = await carlObject.payItem(deployedItemAddress, carl2bobPayment, {from:carl, value: carl2bobPayment});
             assert.equal(await web3.eth.getBalance(deployedItemAddress), 0, "Bob's item balance doesn't match, it should be 0");

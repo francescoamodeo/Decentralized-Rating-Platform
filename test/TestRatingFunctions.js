@@ -89,6 +89,7 @@ const blocks = [1, 7, 10, 21, 22];
 const skills = [10, 3, 4, 1, 1];
 
 contract("Testing simple average rating function", accounts => {
+    console.log("TestRatingFunctions");
 
     it("Should test compute() correctly", async() => {
 

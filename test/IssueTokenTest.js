@@ -8,11 +8,10 @@ const UserSkills = artifacts.require("UserSkills");
 const TokenContract = artifacts.require("ERC20");
 
 
-contract("RatingSystemFramework: correctness test", accounts => {
-
+contract("RatingSystemFramework IssueTokenTest: correctness test", accounts => {
     const alice = accounts[0]; // System creator
-    const bob = accounts[2];   // User of the System
-    const carl = accounts[3];  // Rater EOA user
+    const bob = accounts[1];   // User of the System
+    const carl = accounts[2];  // Rater EOA user
     const dave = accounts[4];  // Error Test user
 
     const bobName = "Bob";
@@ -57,8 +56,10 @@ contract("RatingSystemFramework: correctness test", accounts => {
     it("Should test update user skill", async() => {
         const ratingSystem = await RatingSystem.deployed();
 
+        console.log(bob);
         // create Bob user
-        await ratingSystem.createUser(web3.utils.fromUtf8(bobName), {from: bob});
+        const tx = await ratingSystem.createUser(web3.utils.fromUtf8(bobName), {from: bob});
+        console.log(tx);
         const bobUserAddress = await ratingSystem.getMyUserContract({from: bob});
         const bobObject = await User.at(bobUserAddress);
 
@@ -100,11 +101,13 @@ contract("RatingSystemFramework: correctness test", accounts => {
             const bobItemObject = await Item.at(bobItemAddress);
     
             
+            await bobItemObject.commitPermission(carlUserAddress, carl2bobPayment, {from: bob});
+
             // Carl send an amout of ether to Bob's item    
             const payTx = await carlObject.payItem(bobItemAddress, carl2bobPayment, {from:carl, value: carl2bobPayment});
 
             // grant permission to Carl to rate Bob's item 
-            await bobItemObject.grantPermission(carlUserAddress, {from: bob});
+            //await bobItemObject.grantPermission(carlUserAddress, {from: bob});
 
             // Carl (User) rates Bob's item
             await carlObject.addRate(bobItemAddress, score, {from: carl});
@@ -164,6 +167,7 @@ contract("RatingSystemFramework: correctness test", accounts => {
             assert.equal(await carlSkillsObject.getSkillValue(web3.utils.fromUtf8(bobItemSkill)), 1, "Carl's skill value doesn't match");
             
 
+            await bobItemObject.commitPermission(carlUserAddress, carl2bobPayment, {from: bob});
             // Carl send an amout of ether to Bob's item    
             const payTx = await carlObject.payItem(bobItemAddress, carl2bobPayment, {from:carl, value: carl2bobPayment});
 
@@ -206,6 +210,7 @@ contract("RatingSystemFramework: correctness test", accounts => {
         // Carl's skill value should have been update to 2
         assert.equal(await carlSkillsObject.getSkillValue(web3.utils.fromUtf8(bobItemSkill)), 2, "Carl's skill value doesn't match");
 
+        await bobItemObject.commitPermission(carlUserAddress, carl2bobPayment, {from: bob});
         // Carl send an amout of ether and token  (earned from last rate) to Bob's item    
         await carlObject.payItem(bobItemAddress, carl2bobPayment, {from:carl, value: carl2bobPayment});
 
